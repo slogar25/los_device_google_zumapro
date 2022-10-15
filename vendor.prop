@@ -1,1 +1,6 @@
 ro.soc.model=Tensor G4
+
+
+# RKPD
+remote_provisioning.enable_rkpd=true
+remote_provisioning.hostname=remoteprovisioning.googleapis.com

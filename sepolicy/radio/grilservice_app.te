@@ -26,3 +26,6 @@ get_prop(grilservice_app, telephony_modemtype_prop)
 # Set modem logging properties
 set_prop(grilservice_app, vendor_logger_prop)
 set_prop(grilservice_app, vendor_modem_prop)
+
+
+allow grilservice_app sysfs_irq:dir { read open };
