@@ -1,0 +1,3 @@
+# b/267260619
+dontaudit hal_sensors_default dumpstate:fd { use };
+dontaudit hal_sensors_default dumpstate:fifo_file { write };

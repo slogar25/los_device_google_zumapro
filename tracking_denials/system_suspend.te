@@ -1,0 +1,2 @@
+# b/261105356
+dontaudit system_suspend_server chre:binder { transfer };

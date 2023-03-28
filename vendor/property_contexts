@@ -1,0 +1,19 @@
+# Camera
+persist.vendor.camera.                     u:object_r:vendor_camera_prop:s0
+vendor.camera.                             u:object_r:vendor_camera_prop:s0
+vendor.camera.fatp.                        u:object_r:vendor_camera_fatp_prop:s0
+
+# Fingerprint
+vendor.fingerprint.                        u:object_r:vendor_fingerprint_prop:s0
+vendor.gf.                                 u:object_r:vendor_fingerprint_prop:s0
+
+# Battery
+vendor.battery.defender.                   u:object_r:vendor_battery_defender_prop:s0
+persist.vendor.shutdown.                   u:object_r:vendor_shutdown_prop:s0
+
+# USB
+persist.vendor.usb.                        u:object_r:vendor_usb_config_prop:s0
+vendor.usb.                                u:object_r:vendor_usb_config_prop:s0
+
+# Dynamic sensor
+vendor.dynamic_sensor.                     u:object_r:vendor_dynamic_sensor_prop:s0
