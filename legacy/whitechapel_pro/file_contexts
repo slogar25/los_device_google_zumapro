@@ -2,7 +2,6 @@
 /vendor/bin/dumpsys                                                         u:object_r:vendor_dumpsys:s0
 /vendor/bin/hw/android\.hardware\.gatekeeper-service\.trusty                u:object_r:hal_gatekeeper_default_exec:s0
 /vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.trusty           u:object_r:hal_gatekeeper_default_exec:s0
-/vendor/bin/hw/android\.hardware\.contexthub-service\.generic               u:object_r:hal_contexthub_default_exec:s0
 /vendor/bin/hw/android\.hardware\.nfc-service\.st                           u:object_r:hal_nfc_default_exec:s0
 
 # Vendor libraries
@@ -34,13 +33,11 @@
 /dev/st21nfc                                                                u:object_r:nfc_device:s0
 /dev/sys/block/bootdevice(/.*)?                                             u:object_r:bootdevice_sysdev:s0
 /dev/socket/chre                                                            u:object_r:chre_socket:s0
-/dev/block/sda                                                              u:object_r:sda_block_device:s0
 
 # Data
 /data/vendor/ss(/.*)?                                                       u:object_r:tee_data_file:s0
 /data/nfc(/.*)?                                                             u:object_r:nfc_data_file:s0
 /data/vendor/firmware/wifi(/.*)?                                            u:object_r:updated_wifi_firmware_data_file:s0
-/data/vendor/tcpdump_logger(/.*)?                                           u:object_r:tcpdump_vendor_data_file:s0
 /data/vendor/misc(/.*)?                                                     u:object_r:vendor_misc_data_file:s0
 /data/per_boot(/.*)?                                                        u:object_r:per_boot_file:s0
 /data/vendor/sensors/registry(/.*)?                                         u:object_r:sensor_reg_data_file:s0

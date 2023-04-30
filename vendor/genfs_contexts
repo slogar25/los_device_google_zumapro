@@ -11,6 +11,8 @@ genfscon sysfs /devices/platform/17000080.devfreq_bo/devfreq/17000080.devfreq_bo
 # Fabric
 genfscon sysfs /devices/platform/17000090.devfreq_dsu/devfreq/17000090.devfreq_dsu/min_freq             u:object_r:sysfs_fabric:s0
 genfscon sysfs /devices/platform/170000a0.devfreq_bci/devfreq/170000a0.devfreq_bci/min_freq             u:object_r:sysfs_fabric:s0
+genfscon sysfs /devices/platform/17000090.devfreq_dsu/devfreq/17000090.devfreq_dsu/max_freq             u:object_r:sysfs_fabric:s0
+genfscon sysfs /devices/platform/170000a0.devfreq_bci/devfreq/170000a0.devfreq_bci/max_freq             u:object_r:sysfs_fabric:s0
 
 # EdgeTPU
 genfscon sysfs /devices/platform/1a000000.rio                           u:object_r:sysfs_edgetpu:s0
@@ -446,6 +448,7 @@ genfscon sysfs /devices/platform/google,usbc_port_cooling_dev/wakeup/wakeup     
 genfscon sysfs /devices/platform/gpio_keys/wakeup/wakeup                                                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/sound-aoc/wakeup/wakeup                                                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/wakeup/wakeup                                                                             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/odm/odm:btbcm/wakeup                                                                     u:object_r:sysfs_wakeup:s0
 
 # Trusty
 genfscon sysfs /module/trusty_virtio/parameters/use_high_wq               u:object_r:sysfs_trusty:s0
@@ -456,6 +459,9 @@ genfscon sysfs /kernel/pixel_em/active_profile                            u:obje
 
 # GPU
 genfscon sysfs /devices/platform/1f000000.mali/hint_min_freq              u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/1f000000.mali/dma_buf_gpu_mem            u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/1f000000.mali/total_gpu_mem              u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/1f000000.mali/kprcs                      u:object_r:sysfs_gpu:s0
 
 # GSA logs
 genfscon sysfs /devices/platform/16490000.gsa-ns/log_main                 u:object_r:sysfs_gsa_log:s0
