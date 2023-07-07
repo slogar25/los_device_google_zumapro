@@ -24,6 +24,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/zumapro/system_ext-permissions-stock.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/system_ext-permissions-stock.xml
 
+ifneq ($(BOARD_WITHOUT_RADIO),true)
+# product permissions XML from stock
+PRODUCT_COPY_FILES += \
+    device/google/zumapro/product-permissions-stock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/product-permissions-stock.xml
+endif
+
+
 # Android Verified Boot
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
