@@ -218,6 +218,7 @@ genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-7/7-0057/registers_dump     
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-8/8-0057/registers_dump             u:object_r:sysfs_power_dump:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-9/9-0057/registers_dump             u:object_r:sysfs_power_dump:s0
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-6/6-006e/registers_dump             u:object_r:sysfs_power_dump:s0
+genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-6/6-006e/power_supply               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-0/0-0065/power_supply               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-1/1-0065/power_supply               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-2/2-0065/power_supply               u:object_r:sysfs_batteryinfo:s0
