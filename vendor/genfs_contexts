@@ -492,3 +492,6 @@ genfscon sysfs /devices/platform/17000000.aoc/control/memory_votes_ff1      u:ob
 
 # OTA
 genfscon sysfs /devices/platform/13200000.ufs/pixel/boot_lun_enabled           u:object_r:sysfs_ota:s0
+
+# Faceauth
+genfscon sysfs /sys/kernel/vendor_mm/gcma_heap/trusty:faceauth_rawimage_heap/max_usage_kb u:object_r:sysfs_faceauth_rawimage_heap:s0
