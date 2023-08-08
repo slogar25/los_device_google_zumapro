@@ -1,2 +1,6 @@
 # b/272628396
 dontaudit systemui_app service_manager_type:service_manager find;
+# b/294300348
+userdebug_or_eng(`
+    permissive systemui_app;
+')
