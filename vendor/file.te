@@ -49,3 +49,6 @@ type sysfs_ota, sysfs_type, fs_type;
 
 # GSA
 type sysfs_gsa_log, sysfs_type, fs_type;
+
+# Faceauth
+type sysfs_faceauth_rawimage_heap, sysfs_type, fs_type;
