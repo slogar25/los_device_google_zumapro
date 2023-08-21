@@ -136,10 +136,14 @@
 /dev/lwis-eeprom-nessie                                                     u:object_r:lwis_device:s0
 /dev/lwis-eeprom-smaug-buraq                                                u:object_r:lwis_device:s0
 /dev/lwis-eeprom-smaug-dokkaebi                                             u:object_r:lwis_device:s0
+/dev/lwis-eeprom-smaug-imentet                                              u:object_r:lwis_device:s0
 /dev/lwis-eeprom-smaug-leshen                                               u:object_r:lwis_device:s0
 /dev/lwis-eeprom-smaug-leshen-uw                                            u:object_r:lwis_device:s0
-/dev/lwis-eeprom-smaug-sandworm                                             u:object_r:lwis_device:s0
+/dev/lwis-eeprom-smaug-oksoko                                               u:object_r:lwis_device:s0
 /dev/lwis-eeprom-smaug-oksoko-nautilus                                      u:object_r:lwis_device:s0
+/dev/lwis-eeprom-smaug-sandworm                                             u:object_r:lwis_device:s0
+/dev/lwis-eeprom-smaug-svarog                                               u:object_r:lwis_device:s0
+/dev/lwis-eeprom-smaug-svarog-outer                                         u:object_r:lwis_device:s0
 /dev/lwis-eeprom-smaug-taotie-front                                         u:object_r:lwis_device:s0
 /dev/lwis-eeprom-smaug-taotie-uw                                            u:object_r:lwis_device:s0
 /dev/lwis-flash-lm3644                                                      u:object_r:lwis_device:s0
@@ -168,6 +172,7 @@
 /dev/lwis-sensor-buraq                                                      u:object_r:lwis_device:s0
 /dev/lwis-sensor-dokkaebi                                                   u:object_r:lwis_device:s0
 /dev/lwis-sensor-dokkaebi-nautilus                                          u:object_r:lwis_device:s0
+/dev/lwis-sensor-dokkaebi-tele                                              u:object_r:lwis_device:s0
 /dev/lwis-sensor-imentet                                                    u:object_r:lwis_device:s0
 /dev/lwis-sensor-kraken                                                     u:object_r:lwis_device:s0
 /dev/lwis-sensor-lamassu                                                    u:object_r:lwis_device:s0
@@ -177,11 +182,12 @@
 /dev/lwis-sensor-oksoko                                                     u:object_r:lwis_device:s0
 /dev/lwis-sensor-oksoko-nautilus                                            u:object_r:lwis_device:s0
 /dev/lwis-sensor-sandworm                                                   u:object_r:lwis_device:s0
+/dev/lwis-sensor-svarog                                                     u:object_r:lwis_device:s0
+/dev/lwis-sensor-svarog-outer                                               u:object_r:lwis_device:s0
 /dev/lwis-sensor-taotie-front                                               u:object_r:lwis_device:s0
 /dev/lwis-sensor-taotie-tele                                                u:object_r:lwis_device:s0
 /dev/lwis-sensor-taotie-uw                                                  u:object_r:lwis_device:s0
 /dev/lwis-slc                                                               u:object_r:lwis_device:s0
-/dev/lwis-eeprom-smaug-oksoko                                               u:object_r:lwis_device:s0
 /dev/lwis-top                                                               u:object_r:lwis_device:s0
 /dev/lwis-tof-tarasque                                                      u:object_r:lwis_device:s0
 # Although ispolin_ranging is not a real lwis_device but we treat it as an abstract lwis_device.
