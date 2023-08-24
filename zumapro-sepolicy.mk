@@ -17,15 +17,8 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/zumapro-sepolicy/system_ext/pr
 BOARD_SEPOLICY_DIRS += hardware/google/pixel-sepolicy/powerstats
 
 # To be reviewed and removed.
-BOARD_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/legacy/whitechapel_pro
-PRODUCT_PRIVATE_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/legacy/private
-SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/legacy/system_ext/public
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/legacy/system_ext/private
-BOARD_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/vendor
-BOARD_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/radio
-PRODUCT_PRIVATE_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/radio/private
-BOARD_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/tracking_denials
-PRODUCT_PUBLIC_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/public
+BOARD_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/whitechapel_pro
 PRODUCT_PRIVATE_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/system_ext/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/zumapro-sepolicy/legacy/system_ext/private
+
