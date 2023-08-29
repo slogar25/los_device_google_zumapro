@@ -1,2 +1,2 @@
 # Fingerprint
-vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon            u:object_r:hal_fingerprint_ext_hwservice:s0
+vendor.qti.hardware.fingerprint::IQtiExtendedFingerprint                           u:object_r:hal_fingerprint_ext_hwservice:s0
