@@ -37,3 +37,23 @@ hal_client_domain(hal_fingerprint_default, hal_thermal);
 # allow fingerprint to read sysfs_leds
 allow hal_fingerprint_default sysfs_leds:file r_file_perms;
 allow hal_fingerprint_default sysfs_leds:dir r_dir_perms;
+
+# allow fingerprint to wakeup to trigger calibration scans and sleep after
+allow hal_fingerprint_default self:capability2 wake_alarm;
+allow hal_fingerprint_default self:capability2 block_suspend;
+
+# allow fingerprint to search for files
+# TODO: b/297562630 - remove unecessary permissions once not needed
+allow hal_fingerprint_default mnt_vendor_file:dir search;
+allow hal_fingerprint_default vendor_misc_data_file:dir search;
+allow hal_fingerprint_default persist_file:dir search;
+
+# allow fingerprint to rw config and calibration files in persist
+# TODO: b/297562630 - remove unecessary permissions once not needed
+allow hal_fingerprint_default persist_fingerprint_file:dir search;
+allow hal_fingerprint_default persist_fingerprint_file:file create_file_perms;
+
+# allow fingerprint to rw data files
+# TODO: b/297562630 - remove unecessary permissions once not needed
+allow hal_fingerprint_default vendor_fingerprint_data_file:dir create_dir_perms;
+allow hal_fingerprint_default vendor_fingerprint_data_file:file create_file_perms;
