@@ -14,4 +14,8 @@ userdebug_or_eng(`
     permissive kernel;
     permissive hal_power_default;
     permissive servicemanager;
+    permissive con_monitor_app;
+    permissive systemui_app;
+    permissive ssr_detector_app;
+    permissive fastbootd;
 ')
