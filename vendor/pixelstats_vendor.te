@@ -1,0 +1,3 @@
+# Pca charge
+allow pixelstats_vendor sysfs_pca:file rw_file_perms;
+
