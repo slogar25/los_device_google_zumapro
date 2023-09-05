@@ -129,7 +129,6 @@ genfscon sysfs /devices/platform/13120000.pcie/link_stats/pll_lock_average      
 # Battery
 genfscon sysfs /devices/platform/google,battery/power_supply/battery                    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/google,cpm                                             u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/google,charger                                         u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/typec                      u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0036/power_supply               u:object_r:sysfs_batteryinfo:s0
