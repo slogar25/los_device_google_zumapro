@@ -1,1 +1,6 @@
+# Devices
+/dev/logbuffer_maxfg_base                                                   u:object_r:logbuffer_device:s0
+/dev/logbuffer_maxfg_secondary                                              u:object_r:logbuffer_device:s0
+/dev/logbuffer_maxfg_base_monitor                                           u:object_r:logbuffer_device:s0
+/dev/logbuffer_maxfg_secondary_monitor                                      u:object_r:logbuffer_device:s0
 
