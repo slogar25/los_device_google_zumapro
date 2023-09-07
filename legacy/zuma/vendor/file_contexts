@@ -7,7 +7,6 @@
 /vendor/bin/hw/android\.hardware\.usb\.gadget-service                       u:object_r:hal_usb_gadget_impl_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element@1\.2-uicc-service          u:object_r:hal_secure_element_uicc_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element-service.uicc               u:object_r:hal_secure_element_uicc_exec:s0
-/vendor/bin/hw/android\.hardware\.qorvo\.uwb\.service                       u:object_r:hal_uwb_vendor_default_exec:s0
 /vendor/bin/hw/android\.hardware\.composer\.hwc3-service\.pixel             u:object_r:hal_graphics_composer_default_exec:s0
 /vendor/bin/hw/android\.hardware\.contexthub-service\.generic               u:object_r:hal_contexthub_default_exec:s0
 /vendor/bin/hw/google\.hardware\.media\.c2@2\.0-service                     u:object_r:mediacodec_google_exec:s0
@@ -20,7 +19,6 @@
 /vendor/bin/trusty_apploader                                                u:object_r:trusty_apploader_exec:s0
 /vendor/bin/trusty_metricsd                                                 u:object_r:trusty_metricsd_exec:s0
 /vendor/bin/chre                                                            u:object_r:chre_exec:s0
-/vendor/bin/init\.uwb\.calib\.sh                                            u:object_r:vendor_uwb_init_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.trusty         u:object_r:hal_keymint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.rust\.trusty   u:object_r:hal_keymint_default_exec:s0
 /vendor/bin/ufs_firmware_update\.sh                                         u:object_r:ufs_firmware_update_exec:s0
