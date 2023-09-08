@@ -1,0 +1,2 @@
+# Allow the Camera HAL to acquire wakelocks for buffer pre-allocation purposes
+wakelock_use(hal_camera_default)
