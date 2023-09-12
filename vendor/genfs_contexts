@@ -3,5 +3,8 @@ genfscon sysfs /devices/platform/google,charger                                 
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-006e/chg_stats                  u:object_r:sysfs_pca:s0
 genfscon sysfs /devices/platform/10ca0000.hsi2c/i2c-10/10-006e/chg_stats                u:object_r:sysfs_pca:s0
 
+# debugfs
+genfscon debugfs /regmap                                                u:object_r:vendor_regmap_debugfs:s0
+
 # Haptics
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-0043                            u:object_r:sysfs_vibrator:s0

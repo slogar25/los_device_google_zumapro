@@ -1,0 +1,1 @@
+allow insmod-sh vendor_regmap_debugfs:dir search;

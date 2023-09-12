@@ -20,7 +20,6 @@ hal_uwb_default debugfs file b/279680213
 incidentd apex_art_data_file file b/272628762
 incidentd incidentd anon_inode b/274374992
 insmod-sh insmod-sh key b/274374722
-insmod-sh vendor_regmap_debugfs dir b/274727542
 kernel vendor_fw_file dir b/272166737
 kernel vendor_fw_file dir b/272166787
 mtectrl unlabeled dir b/264483752
