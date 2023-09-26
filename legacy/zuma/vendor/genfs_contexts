@@ -88,21 +88,25 @@ genfscon sysfs /devices/platform/acpm_stats                                     
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device0/enabled_rails u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device0/energy_value  u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device0/lpf_power     u:object_r:sysfs_odpm:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device0/lpf_current   u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device0/name          u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device0/sampling_rate u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device1/enabled_rails u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device1/energy_value  u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device1/lpf_power     u:object_r:sysfs_odpm:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device1/lpf_current   u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device1/name          u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device1/sampling_rate u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device0/enabled_rails u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device0/energy_value  u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device0/lpf_power     u:object_r:sysfs_odpm:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device0/lpf_current   u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device0/name          u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device0/sampling_rate u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device1/enabled_rails u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device1/energy_value  u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device1/lpf_power     u:object_r:sysfs_odpm:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device1/lpf_current   u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device1/name          u:object_r:sysfs_odpm:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15510000/i2c-8/8-002f/s2mpg15-meter/s2mpg15-odpm/iio:device1/sampling_rate u:object_r:sysfs_odpm:s0
 
@@ -151,6 +155,9 @@ genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0036/power_supply     
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0069/power_supply             u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0057/power_supply             u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0057/registers_dump           u:object_r:sysfs_power_dump:s0
+genfscon sysfs /class/power_supply/wireless/device/version                              u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /class/power_supply/wireless/device/status                               u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /class/power_supply/wireless/device/fw_rev                               u:object_r:sysfs_batteryinfo:s0
 
 # wake up nodes
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-0008/wakeup                                                       u:object_r:sysfs_wakeup:s0
