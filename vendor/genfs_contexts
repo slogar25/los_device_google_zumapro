@@ -8,3 +8,9 @@ genfscon debugfs /regmap                                                u:object
 
 # Haptics
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-0043                            u:object_r:sysfs_vibrator:s0
+
+# wake up nodes
+genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/wakeup                                              u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.8.auto/wakeup                       u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.8.auto/usb1/wakeup                  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.8.auto/usb2/wakeup                  u:object_r:sysfs_wakeup:s0
