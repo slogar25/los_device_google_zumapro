@@ -14,3 +14,6 @@ genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/wakeup              
 genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.8.auto/wakeup                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.8.auto/usb1/wakeup                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.8.auto/usb2/wakeup                  u:object_r:sysfs_wakeup:s0
+
+# GPU
+genfscon sysfs /devices/platform/1f000000.mali/cur_freq                   u:object_r:sysfs_gpu:s0
