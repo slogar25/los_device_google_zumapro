@@ -1,0 +1,4 @@
+# b/307468733
+userdebug_or_eng(`
+  permissive vendor_init;
+')

@@ -1,0 +1,4 @@
+# b/307468561
+userdebug_or_eng(`
+  permissive hal_wireless_charger;
+')

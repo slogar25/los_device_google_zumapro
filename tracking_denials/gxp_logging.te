@@ -1,0 +1,4 @@
+# b/307468752
+userdebug_or_eng(`
+  permissive gxp_logging;
+')

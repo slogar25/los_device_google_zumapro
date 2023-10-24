@@ -1,0 +1,4 @@
+# b/307468771
+userdebug_or_eng(`
+  permissive con_monitor_app;
+')
