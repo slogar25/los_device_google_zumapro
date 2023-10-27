@@ -9,6 +9,11 @@
 # persist
 /mnt/vendor/persist/uwb(/.*)?                                               u:object_r:persist_uwb_file:s0
 
+# Bluetooth
+/dev/ttySAC18                                                               u:object_r:hci_attach_dev:s0
+/dev/logbuffer_btlpm                                                        u:object_r:logbuffer_device:s0
+/dev/logbuffer_tty18                                                        u:object_r:logbuffer_device:s0
+
 # Devices
 /dev/logbuffer_maxfg_base                                                   u:object_r:logbuffer_device:s0
 /dev/logbuffer_maxfg_secondary                                              u:object_r:logbuffer_device:s0
