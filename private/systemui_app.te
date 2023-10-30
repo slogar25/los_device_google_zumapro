@@ -1,0 +1,3 @@
+# b/308381668
+dontaudit systemui_app statsmanager_service:service_manager { find };
+
