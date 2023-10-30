@@ -223,12 +223,6 @@ genfscon sysfs /module/trusty_core/parameters/use_high_wq                 u:obje
 # EM Profile
 genfscon sysfs /kernel/pixel_em/active_profile                            u:object_r:sysfs_em_profile:s0
 
-# GPU
-genfscon sysfs /devices/platform/1f000000.mali/hint_min_freq              u:object_r:sysfs_gpu:s0
-genfscon sysfs /devices/platform/1f000000.mali/dma_buf_gpu_mem            u:object_r:sysfs_gpu:s0
-genfscon sysfs /devices/platform/1f000000.mali/total_gpu_mem              u:object_r:sysfs_gpu:s0
-genfscon sysfs /devices/platform/1f000000.mali/kprcs                      u:object_r:sysfs_gpu:s0
-
 # GSA logs
 genfscon sysfs /devices/platform/16490000.gsa-ns/log_main                 u:object_r:sysfs_gsa_log:s0
 genfscon sysfs /devices/platform/16490000.gsa-ns/log_intermediate         u:object_r:sysfs_gsa_log:s0
