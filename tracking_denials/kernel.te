@@ -1,5 +1,4 @@
 # b/307468756
 userdebug_or_eng(`
   permissive kernel;
-')# b/308381222
-dontaudit kernel kernel:capability { net_bind_service };
+')

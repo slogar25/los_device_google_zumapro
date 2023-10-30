@@ -1,5 +1,4 @@
 # b/307468690
 userdebug_or_eng(`
   permissive system_server;
-')# b/308381611
-dontaudit system_server vendor_public_lib_file:dir { search };
+')

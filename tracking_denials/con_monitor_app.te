@@ -1,8 +1,4 @@
 # b/307468771
 userdebug_or_eng(`
   permissive con_monitor_app;
-')# b/308381432
-dontaudit con_monitor_app activity_service:service_manager { find };
-dontaudit con_monitor_app content_capture_service:service_manager { find };
-dontaudit con_monitor_app game_service:service_manager { find };
-dontaudit con_monitor_app netstats_service:service_manager { find };
+')

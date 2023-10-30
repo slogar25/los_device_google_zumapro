@@ -1,6 +1,4 @@
 # b/307468733
 userdebug_or_eng(`
   permissive vendor_init;
-')# b/308381748
-dontaudit vendor_init debugfs_trace_marker:file { getattr };
-dontaudit vendor_init default_prop:property_service { set };
+')
