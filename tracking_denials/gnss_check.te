@@ -1,0 +1,2 @@
+# b/308381338
+dontaudit gnss_check property_socket:sock_file { write };

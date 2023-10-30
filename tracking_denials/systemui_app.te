@@ -1,4 +1,5 @@
 # b/307468867
 userdebug_or_eng(`
   permissive systemui_app;
-')
+')# b/308381668
+dontaudit systemui_app statsmanager_service:service_manager { find };
