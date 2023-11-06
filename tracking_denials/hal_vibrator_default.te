@@ -1,4 +1,0 @@
-# b/307468462
-userdebug_or_eng(`
-  permissive hal_vibrator_default;
-')
