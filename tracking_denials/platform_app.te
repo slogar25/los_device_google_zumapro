@@ -1,0 +1,2 @@
+# b/309551159
+dontaudit platform_app radio_vendor_data_file:dir { search };
