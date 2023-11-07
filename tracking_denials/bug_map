@@ -40,3 +40,9 @@ vendor_init tee_data_file lnk_file b/272166664
 vendor_init vendor_camera_prop property_service b/267714573
 vendor_init vendor_camera_prop property_service b/268566481
 vendor_init vendor_camera_prop property_service b/273143844
+sctd sctd tcp_socket b/309550514
+sctd swcnd unix_stream_socket b/309550514
+sctd vendor_persist_config_default_prop file b/309550514
+spad spad unix_stream_socket b/309550905
+swcnd swcnd unix_stream_socket b/309551062
+
