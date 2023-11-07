@@ -1,7 +1,0 @@
-# b/307468788
-userdebug_or_eng(`
-  permissive hal_health_default;
-')# b/308380763
-dontaudit hal_health_default sysfs:file { getattr };
-dontaudit hal_health_default sysfs:file { open };
-dontaudit hal_health_default sysfs:file { read };
