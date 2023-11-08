@@ -6,3 +6,9 @@ dontaudit con_monitor_app activity_service:service_manager { find };
 dontaudit con_monitor_app content_capture_service:service_manager { find };
 dontaudit con_monitor_app game_service:service_manager { find };
 dontaudit con_monitor_app netstats_service:service_manager { find };
+# b/309732305
+dontaudit con_monitor_app batterystats_service:service_manager { find };
+dontaudit con_monitor_app init:unix_stream_socket { connectto };
+dontaudit con_monitor_app property_socket:sock_file { write };
+dontaudit con_monitor_app radio_prop:property_service { set };
+dontaudit con_monitor_app virtual_device_service:service_manager { find };
