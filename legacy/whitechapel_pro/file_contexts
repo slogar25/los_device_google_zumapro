@@ -42,6 +42,3 @@
 /data/per_boot(/.*)?                                                        u:object_r:per_boot_file:s0
 /dev/battery_history                                                        u:object_r:battery_history_device:s0
 /data/vendor/powerstats(/.*)?                                               u:object_r:powerstats_vendor_data_file:s0
-
-# Raw HID device
-/dev/hidraw[0-9]*                        u:object_r:hidraw_device:s0
