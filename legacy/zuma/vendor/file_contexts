@@ -3,8 +3,6 @@
 /vendor/bin/hw/android\.hardware\.boot@1\.2-service-zumapro                 u:object_r:hal_bootctl_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power\.stats-service\.pixel               u:object_r:hal_power_stats_default_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element-service\.thales            u:object_r:hal_secure_element_st54spi_aidl_exec:s0
-/vendor/bin/hw/android\.hardware\.usb-service                               u:object_r:hal_usb_impl_exec:s0
-/vendor/bin/hw/android\.hardware\.usb\.gadget-service                       u:object_r:hal_usb_gadget_impl_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element@1\.2-uicc-service          u:object_r:hal_secure_element_uicc_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element-service.uicc               u:object_r:hal_secure_element_uicc_exec:s0
 /vendor/bin/hw/android\.hardware\.composer\.hwc3-service\.pixel             u:object_r:hal_graphics_composer_default_exec:s0
@@ -85,8 +83,6 @@
 /dev/block/platform/13200000\.ufs/by-name/ufs_internal                      u:object_r:ufs_internal_block_device:s0
 /dev/gxp                                                                    u:object_r:gxp_device:s0
 /dev/mali0                                                                  u:object_r:gpu_device:s0
-/dev/logbuffer_tcpm                                                         u:object_r:logbuffer_device:s0
-/dev/logbuffer_usbpd                                                        u:object_r:logbuffer_device:s0
 /dev/logbuffer_ssoc                                                         u:object_r:logbuffer_device:s0
 /dev/logbuffer_wireless                                                     u:object_r:logbuffer_device:s0
 /dev/logbuffer_ttf                                                          u:object_r:logbuffer_device:s0

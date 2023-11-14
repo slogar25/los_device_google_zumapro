@@ -2,6 +2,8 @@
 /vendor/bin/hw/android\.hardware\.qorvo\.uwb\.service                       u:object_r:hal_uwb_vendor_default_exec:s0
 /vendor/bin/init_uwb_calib                                                  u:object_r:vendor_uwb_init_exec:s0
 /vendor/bin/dump/dump_power                                                 u:object_r:dump_power_exec:s0
+/vendor/bin/hw/android\.hardware\.usb-service                               u:object_r:hal_usb_impl_exec:s0
+/vendor/bin/hw/android\.hardware\.usb\.gadget-service                       u:object_r:hal_usb_gadget_impl_exec:s0
 
 # Vendor
 /data/vendor/uwb(/.*)?                                                      u:object_r:uwb_data_vendor:s0
@@ -19,4 +21,6 @@
 /dev/logbuffer_maxfg_secondary                                              u:object_r:logbuffer_device:s0
 /dev/logbuffer_maxfg_base_monitor                                           u:object_r:logbuffer_device:s0
 /dev/logbuffer_maxfg_secondary_monitor                                      u:object_r:logbuffer_device:s0
+/dev/logbuffer_tcpm                                                         u:object_r:logbuffer_device:s0
+/dev/logbuffer_usbpd                                                        u:object_r:logbuffer_device:s0
 

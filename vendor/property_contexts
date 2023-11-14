@@ -1,0 +1,4 @@
+# USB
+persist.vendor.usb.                        u:object_r:vendor_usb_config_prop:s0
+vendor.usb.                                u:object_r:vendor_usb_config_prop:s0
+

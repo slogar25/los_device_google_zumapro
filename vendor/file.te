@@ -6,6 +6,7 @@ type sysfs_pca, sysfs_type, fs_type;
 
 # debugfs
 type vendor_regmap_debugfs, fs_type, debugfs_type;
+type vendor_usb_debugfs, fs_type, debugfs_type;
 
 # Data
 type uwb_vendor_data_file, file_type, data_file_type, app_data_file_type;
