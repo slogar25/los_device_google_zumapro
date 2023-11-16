@@ -33,3 +33,5 @@ user=_app seinfo=platform name=com.samsung.slsi.engineermode domain=vendor_engin
 # Domain for CatEngineService
 user=system seinfo=platform name=com.google.android.CatEngine domain=cat_engine_service_app type=system_app_data_file levelFrom=all
 
+# Vendor Satellite Service
+user=_app isPrivApp=true seinfo=platform name=com.samsung.slsi.telephony.satelliteservice domain=vendor_satellite_service levelFrom=all
