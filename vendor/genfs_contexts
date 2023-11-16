@@ -16,6 +16,7 @@ genfscon sysfs /devices/platform/1f000000.mali/dma_buf_gpu_mem            u:obje
 genfscon sysfs /devices/platform/1f000000.mali/total_gpu_mem              u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/1f000000.mali/kprcs                      u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/1f000000.mali/dvfs_period                u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/1f000000.mali/cur_freq                   u:object_r:sysfs_gpu:s0
 
 # Haptics
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-0043                            u:object_r:sysfs_vibrator:s0
@@ -30,8 +31,9 @@ genfscon sysfs /devices/platform/17000000.aoc/usb_control/wakeup                
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/usb/power/wakeup                      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0025/power_supply/usb/power/wakeup                    u:object_r:sysfs_wakeup:s0
 
-# GPU
-genfscon sysfs /devices/platform/1f000000.mali/cur_freq                   u:object_r:sysfs_gpu:s0
+# OSPM
+genfscon sysfs /devices/platform/cpupm/cpupm/cpd_cl1_target_residency                                   u:object_r:sysfs_ospm:s0
+genfscon sysfs /devices/platform/cpupm/cpupm/cpd_cl2_target_residency                                   u:object_r:sysfs_ospm:s0
 
 # Power ODPM
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/s2mpg14-meter/s2mpg14-odpm/iio:device1/in_power0_scale    u:object_r:sysfs_odpm:s0
