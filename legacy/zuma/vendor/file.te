@@ -21,7 +21,6 @@ type vendor_charger_debugfs, fs_type, debugfs_type;
 type vendor_votable_debugfs, fs_type, debugfs_type;
 type vendor_battery_debugfs, fs_type, debugfs_type;
 type vendor_pm_genpd_debugfs, fs_type, debugfs_type;
-type vendor_usb_debugfs, fs_type, debugfs_type;
 type vendor_maxfg_debugfs, fs_type, debugfs_type;
 
 # WLC

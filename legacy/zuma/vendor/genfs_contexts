@@ -29,7 +29,6 @@ genfscon debugfs /max77779_pmic                                         u:object
 genfscon debugfs /gvotables                                             u:object_r:vendor_votable_debugfs:s0
 genfscon debugfs /google_battery                                        u:object_r:vendor_battery_debugfs:s0
 genfscon debugfs /pm_genpd/pm_genpd_summary                             u:object_r:vendor_pm_genpd_debugfs:s0
-genfscon debugfs /usb                                                   u:object_r:vendor_usb_debugfs:s0
 genfscon debugfs /maxfg                                                 u:object_r:vendor_maxfg_debugfs:s0
 genfscon debugfs /max77779fg                                            u:object_r:vendor_maxfg_debugfs:s0
 
@@ -137,7 +136,6 @@ genfscon sysfs /devices/platform/13120000.pcie/link_stats/pll_lock_average      
 # Battery
 genfscon sysfs /devices/platform/google,battery/power_supply/battery                    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/google,cpm                                             u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/typec                      u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0036/power_supply               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0069/power_supply               u:object_r:sysfs_batteryinfo:s0
@@ -153,7 +151,6 @@ genfscon sysfs /devices/platform/10ca0000.hsi2c/i2c-10/10-0057/registers_dump   
 genfscon sysfs /devices/platform/10ca0000.hsi2c/i2c-10/10-006e/power_supply             u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/10ca0000.hsi2c/i2c-10/10-006e/registers_dump           u:object_r:sysfs_power_dump:s0
 genfscon sysfs /devices/platform/10ca0000.hsi2c/i2c-10/10-0050/eeprom                   u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0025/typec                    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0025/power_supply             u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0036/power_supply             u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0069/power_supply             u:object_r:sysfs_batteryinfo:s0
@@ -175,7 +172,6 @@ genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0069/power_supply/dc/pow
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0069/power_supply/main-charger/power/wakeup                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/wakeup                                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power/wakeup                                                 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/usb/power/wakeup                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/tcpm-source-psy-6-0025/power/wakeup             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0036/power_supply/max77779fg/power/wakeup                         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-003b/wakeup                                                       u:object_r:sysfs_wakeup:s0
@@ -187,17 +183,14 @@ genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0069/power_supply/dc/p
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0069/power_supply/main-charger/power/wakeup                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0025/wakeup                                                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0025/power/wakeup                                               u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0025/power_supply/usb/power/wakeup                              u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0025/power_supply/tcpm-source-psy-6-0025/power/wakeup           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10cb0000.hsi2c/i2c-11/11-0036/power_supply/max77779fg/power/wakeup                       u:object_r:sysfs_wakeup:s0
 
-genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/wakeup/wakeup                                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/13120000.pcie/pci0001:00/0001:00:00.0/0001:01:00.0/wakeup/wakeup                         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/17000000.aoc/com.google.usf.non_wake_up/wakeup/wakeup                                    u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/17000000.aoc/com.google.usf/wakeup/wakeup                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/17000000.aoc/com.google.chre.non_wake_up/wakeup                                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/17000000.aoc/com.google.chre/wakeup                                                      u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/17000000.aoc/usb_control/wakeup                                                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/17000000.aoc/wakeup                                                                      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/wakeup                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15500000/i2c-7/7-001f/power/wakeup                                          u:object_r:sysfs_wakeup:s0
