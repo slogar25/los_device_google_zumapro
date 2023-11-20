@@ -24,3 +24,5 @@
 /dev/logbuffer_tcpm                                                         u:object_r:logbuffer_device:s0
 /dev/logbuffer_usbpd                                                        u:object_r:logbuffer_device:s0
 
+# Gralloc
+/(vendor|system/vendor)/lib(64)?/hw/mapper\.pixel\.so                       u:object_r:same_process_hal_file:s0
