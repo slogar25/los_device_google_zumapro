@@ -28,7 +28,6 @@
 /dev/dri/card0                                                              u:object_r:graphics_device:s0
 /dev/fimg2d                                                                 u:object_r:graphics_device:s0
 /dev/g2d                                                                    u:object_r:graphics_device:s0
-/dev/dit2                                                                   u:object_r:vendor_toe_device:s0
 /dev/st21nfc                                                                u:object_r:nfc_device:s0
 /dev/sys/block/bootdevice(/.*)?                                             u:object_r:bootdevice_sysdev:s0
 /dev/socket/chre                                                            u:object_r:chre_socket:s0
