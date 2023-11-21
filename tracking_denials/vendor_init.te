@@ -4,3 +4,5 @@ userdebug_or_eng(`
 ')# b/308381748
 dontaudit vendor_init debugfs_trace_marker:file { getattr };
 dontaudit vendor_init default_prop:property_service { set };
+# b/312372803
+dontaudit vendor_init tee_data_file:lnk_file { read };

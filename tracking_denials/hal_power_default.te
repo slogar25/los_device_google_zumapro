@@ -1,4 +1,6 @@
 # b/307468758
 userdebug_or_eng(`
   permissive hal_power_default;
-')
+')# b/312372857
+dontaudit hal_power_default sysfs:file { open };
+dontaudit hal_power_default sysfs:file { write };
