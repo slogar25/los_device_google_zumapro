@@ -4,9 +4,24 @@
 /vendor/bin/dump/dump_power                                                 u:object_r:dump_power_exec:s0
 /vendor/bin/hw/android\.hardware\.usb-service                               u:object_r:hal_usb_impl_exec:s0
 /vendor/bin/hw/android\.hardware\.usb\.gadget-service                       u:object_r:hal_usb_gadget_impl_exec:s0
+/vendor/bin/dumpsys                                                         u:object_r:vendor_dumpsys:s0
+/vendor/bin/hw/android\.hardware\.gatekeeper-service\.trusty                u:object_r:hal_gatekeeper_default_exec:s0
+/vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.trusty           u:object_r:hal_gatekeeper_default_exec:s0
+/vendor/bin/hw/android\.hardware\.nfc-service\.st                           u:object_r:hal_nfc_default_exec:s0
 
-# Vendor
-/data/vendor/uwb(/.*)?                                                      u:object_r:uwb_data_vendor:s0
+# Vendor libraries
+/vendor/lib64/libdrm\.so                                                 u:object_r:same_process_hal_file:s0
+/vendor/lib64/libion_google\.so                                          u:object_r:same_process_hal_file:s0
+/vendor/lib64/arm\.graphics-V1-ndk\.so                                   u:object_r:same_process_hal_file:s0
+/vendor/lib64/libOpenCL-pixel\.so                                        u:object_r:same_process_hal_file:s0
+/vendor/lib64/libOpenCL\.so                                              u:object_r:same_process_hal_file:s0
+/vendor/lib64/lib_aion_buffer\.so                                        u:object_r:same_process_hal_file:s0
+/vendor/lib64/pixel-power-ext-V1-ndk\.so                                 u:object_r:same_process_hal_file:s0
+/vendor/lib64/android\.frameworks\.stats-V1-ndk\.so                      u:object_r:same_process_hal_file:s0
+/vendor/lib64/vendor-pixelatoms-cpp\.so                                  u:object_r:same_process_hal_file:s0
+/vendor/lib64/libprotobuf-cpp-lite-(\d+\.){2,3}so                        u:object_r:same_process_hal_file:s0
+/vendor/lib64/libgpudataproducer\.so                                     u:object_r:same_process_hal_file:s0
+/vendor/lib64/hw/mapper\.pixel\.so                                       u:object_r:same_process_hal_file:s0
 
 # persist
 /mnt/vendor/persist/uwb(/.*)?                                               u:object_r:persist_uwb_file:s0
@@ -23,9 +38,23 @@
 /dev/logbuffer_maxfg_secondary_monitor                                      u:object_r:logbuffer_device:s0
 /dev/logbuffer_tcpm                                                         u:object_r:logbuffer_device:s0
 /dev/logbuffer_usbpd                                                        u:object_r:logbuffer_device:s0
+/dev/ttySAC0                                                                u:object_r:tty_device:s0
+/dev/bigwave                                                                u:object_r:video_device:s0
+/dev/watchdog0                                                              u:object_r:watchdog_device:s0
+/dev/dri/card0                                                              u:object_r:graphics_device:s0
+/dev/fimg2d                                                                 u:object_r:graphics_device:s0
+/dev/g2d                                                                    u:object_r:graphics_device:s0
+/dev/st21nfc                                                                u:object_r:nfc_device:s0
+/dev/sys/block/bootdevice(/.*)?                                             u:object_r:bootdevice_sysdev:s0
+/dev/socket/chre                                                            u:object_r:chre_socket:s0
+/dev/battery_history                                                        u:object_r:battery_history_device:s0
 
-# Gralloc
-/(vendor|system/vendor)/lib(64)?/hw/mapper\.pixel\.so                       u:object_r:same_process_hal_file:s0
+# Data
+/data/vendor/ss(/.*)?                                                       u:object_r:tee_data_file:s0
+/data/vendor/firmware/wifi(/.*)?                                            u:object_r:updated_wifi_firmware_data_file:s0
+/data/vendor/misc(/.*)?                                                     u:object_r:vendor_misc_data_file:s0
+/data/vendor/powerstats(/.*)?                                               u:object_r:powerstats_vendor_data_file:s0
+/data/vendor/uwb(/.*)?                                                      u:object_r:uwb_data_vendor:s0
 
 # Trusty
 /dev/block/platform/13200000\.ufs/by-name/trusty_persist                    u:object_r:tee_persist_block_device:s0
