@@ -133,6 +133,7 @@
 /dev/lwis-dpm                                                               u:object_r:lwis_device:s0
 /dev/lwis-eeprom-djinn                                                      u:object_r:lwis_device:s0
 /dev/lwis-eeprom-smaug-dokkaebi                                             u:object_r:lwis_device:s0
+/dev/lwis-eeprom-smaug-taotie-front                                         u:object_r:lwis_device:s0
 /dev/lwis-eeprom-smaug-taotie-uw                                            u:object_r:lwis_device:s0
 /dev/lwis-flash-lm3644                                                      u:object_r:lwis_device:s0
 /dev/lwis-gdc0                                                              u:object_r:lwis_device:s0
