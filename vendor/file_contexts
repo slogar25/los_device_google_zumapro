@@ -126,16 +126,8 @@
 /dev/logbuffer_cpm                                                          u:object_r:logbuffer_device:s0
 /dev/logbuffer_max77779fg_monitor                                           u:object_r:logbuffer_device:s0
 /dev/logbuffer_bd                                                           u:object_r:logbuffer_device:s0
-/dev/lwis-act-cornerfolk                                                    u:object_r:lwis_device:s0
-/dev/lwis-act-cornerfolk-dokkaebi                                           u:object_r:lwis_device:s0
-/dev/lwis-act-cornerfolk-taotie-uw                                          u:object_r:lwis_device:s0
 /dev/lwis-be-core                                                           u:object_r:lwis_device:s0
 /dev/lwis-dpm                                                               u:object_r:lwis_device:s0
-/dev/lwis-eeprom-djinn                                                      u:object_r:lwis_device:s0
-/dev/lwis-eeprom-smaug-dokkaebi                                             u:object_r:lwis_device:s0
-/dev/lwis-eeprom-smaug-taotie-front                                         u:object_r:lwis_device:s0
-/dev/lwis-eeprom-smaug-taotie-uw                                            u:object_r:lwis_device:s0
-/dev/lwis-flash-lm3644                                                      u:object_r:lwis_device:s0
 /dev/lwis-gdc0                                                              u:object_r:lwis_device:s0
 /dev/lwis-gdc1                                                              u:object_r:lwis_device:s0
 /dev/lwis-gse                                                               u:object_r:lwis_device:s0
@@ -144,10 +136,6 @@
 /dev/lwis-isp-fe                                                            u:object_r:lwis_device:s0
 /dev/lwis-lme                                                               u:object_r:lwis_device:s0
 /dev/lwis-mcsc                                                              u:object_r:lwis_device:s0
-/dev/lwis-ois-djinn                                                         u:object_r:lwis_device:s0
-/dev/lwis-sensor-boitata                                                    u:object_r:lwis_device:s0
-/dev/lwis-sensor-dokkaebi                                                   u:object_r:lwis_device:s0
-/dev/lwis-sensor-taotie-uw                                                  u:object_r:lwis_device:s0
 /dev/lwis-slc                                                               u:object_r:lwis_device:s0
 /dev/lwis-top                                                               u:object_r:lwis_device:s0
 /dev/ispolin_ranging                                                        u:object_r:lwis_device:s0
