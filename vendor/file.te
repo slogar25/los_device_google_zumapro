@@ -3,6 +3,7 @@ type persist_uwb_file, file_type, vendor_persist_type;
 
 #sysfs
 type sysfs_pca, sysfs_type, fs_type;
+type sysfs_ospm, sysfs_type, fs_type;
 
 # debugfs
 type vendor_regmap_debugfs, fs_type, debugfs_type;
