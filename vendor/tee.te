@@ -1,2 +1,2 @@
-type tee_persist_block_device, dev_type;
-type tee_userdata_block_device, dev_type;
+allow tee tee_persist_block_device:blk_file rw_file_perms;
+allow tee tee_userdata_block_device:blk_file rw_file_perms;
