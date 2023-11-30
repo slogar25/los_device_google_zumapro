@@ -9,7 +9,6 @@
 /vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.trusty           u:object_r:hal_gatekeeper_default_exec:s0
 /vendor/bin/hw/android\.hardware\.nfc-service\.st                           u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/android\.hardware\.health-service\.zumapro                   u:object_r:hal_health_default_exec:s0
-/vendor/bin/hw/android\.hardware\.boot@1\.2-service-zumapro                 u:object_r:hal_bootctl_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power\.stats-service\.pixel               u:object_r:hal_power_stats_default_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element-service\.thales            u:object_r:hal_secure_element_st54spi_aidl_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element-service.uicc               u:object_r:hal_secure_element_uicc_exec:s0
