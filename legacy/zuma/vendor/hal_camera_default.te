@@ -43,9 +43,6 @@ userdebug_or_eng(`
   set_prop(hal_camera_default, vendor_camera_debug_prop);
 ')
 
-# For camera hal to talk with rlsservice
-allow hal_camera_default rls_service:service_manager find;
-binder_call(hal_camera_default, rlsservice)
 
 hal_client_domain(hal_camera_default, hal_graphics_allocator);
 hal_client_domain(hal_camera_default, hal_graphics_composer)
@@ -76,10 +73,6 @@ allow hal_camera_default sysfs_leds:file r_file_perms;
 # extensions to avoid interference with cellular antennas.
 allow hal_camera_default hal_radioext_hwservice:hwservice_manager find;
 binder_call(hal_camera_default, hal_radioext_default);
-
-# For camera hal to talk with rlsservice
-allow hal_camera_default rls_service:service_manager find;
-binder_call(hal_camera_default, rlsservice)
 
 # Allow access to always-on compute device node
 allow hal_camera_default aoc_device:chr_file rw_file_perms;
