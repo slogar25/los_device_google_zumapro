@@ -1,0 +1,2 @@
+# b/314052376
+dontaudit tee tee_userdata_block_device:blk_file { read write };
