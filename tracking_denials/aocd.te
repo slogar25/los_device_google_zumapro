@@ -1,0 +1,2 @@
+# b/314719343
+dontaudit aocd sysfs_aoc:file { read };
