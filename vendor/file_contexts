@@ -23,6 +23,7 @@
 /vendor/bin/trusty_metricsd                                                 u:object_r:trusty_metricsd_exec:s0
 /vendor/bin/chre                                                            u:object_r:chre_exec:s0
 /vendor/bin/hw/android\.hardware\.security\.keymint-service\.rust\.trusty   u:object_r:hal_keymint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.security\.secretkeeper\.trusty            u:object_r:hal_secretkeeper_default_exec:s0
 /vendor/bin/ufs_firmware_update\.sh                                         u:object_r:ufs_firmware_update_exec:s0
 /vendor/bin/hw/qfp-daemon                                                   u:object_r:hal_fingerprint_default_exec:s0
 
