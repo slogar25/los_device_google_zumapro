@@ -1,0 +1,1 @@
+dontaudit kernel vendor_usb_debugfs:dir search;
