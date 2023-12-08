@@ -1,2 +1,0 @@
-allow insmod-sh self:capability sys_nice;
-allow insmod-sh kernel:process setsched;
