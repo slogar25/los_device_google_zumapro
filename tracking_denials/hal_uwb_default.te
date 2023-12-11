@@ -1,4 +1,0 @@
-# b/307468767
-userdebug_or_eng(`
-  permissive hal_uwb_default;
-')
