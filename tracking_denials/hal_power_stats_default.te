@@ -1,4 +1,8 @@
 # b/307468729
 userdebug_or_eng(`
   permissive hal_power_stats_default;
-')
+')# b/316238807
+dontaudit hal_power_stats_default sysfs_edgetpu:dir { search };
+dontaudit hal_power_stats_default sysfs_edgetpu:file { getattr };
+dontaudit hal_power_stats_default sysfs_edgetpu:file { open };
+dontaudit hal_power_stats_default sysfs_edgetpu:file { read };
