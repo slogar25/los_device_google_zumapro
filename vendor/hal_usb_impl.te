@@ -15,3 +15,6 @@ wakelock_use(hal_usb_impl);
 
 # For interfacing with ThermalHAL
 hal_client_domain(hal_usb_impl, hal_thermal);
+
+# Needed for reporting Usb Overheat suez event through statsd
+allow hal_usb_impl fwk_stats_service:service_manager find;
