@@ -316,3 +316,7 @@ genfscon sysfs /devices/platform/17000000.aoc/control/memory_votes_ff1      u:ob
 
 # OTA
 genfscon sysfs /devices/platform/13200000.ufs/pixel/boot_lun_enabled           u:object_r:sysfs_ota:s0
+
+# Extcon
+genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/extcon   u:object_r:sysfs_extcon:s0
+
