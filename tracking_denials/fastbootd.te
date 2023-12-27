@@ -1,4 +1,0 @@
-# b/307468887
-userdebug_or_eng(`
-  permissive fastbootd;
-')
