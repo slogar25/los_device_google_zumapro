@@ -24,3 +24,5 @@ vendor.battery.defender.                   u:object_r:vendor_battery_defender_pr
 # Mali GPU driver configuration and debug options
 vendor.mali.                               u:object_r:vendor_arm_runtime_option_prop:s0 prefix
 
+# Display
+persist.vendor.primarydisplay.             u:object_r:vendor_display_prop:s0 prefix
