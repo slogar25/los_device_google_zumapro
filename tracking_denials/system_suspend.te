@@ -1,0 +1,4 @@
+# b/318032188
+dontaudit system_suspend_server sysfs:dir { read };
+dontaudit system_suspend_server sysfs_batteryinfo:dir { read };
+dontaudit system_suspend_server sysfs_wlc:dir { read };
