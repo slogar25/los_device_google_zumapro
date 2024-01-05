@@ -1,4 +1,2 @@
 # b/315105050
 dontaudit hal_radioext_default radio_vendor_data_file:file { ioctl };
-# b/318308344
-dontaudit hal_radioext_default hal_bluetooth_coexistence_service:service_manager { find };
