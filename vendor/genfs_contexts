@@ -39,7 +39,6 @@ genfscon sysfs /devices/platform/1f000000.mali/cur_freq                   u:obje
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-0043                            u:object_r:sysfs_vibrator:s0
 
 # wake up nodes
-
 genfscon sysfs /devices/platform/10870000.uart/tty/ttySAC0/power/wakeup                                                   u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power/wakeup                                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/tcpm-source-psy-6-0025/power/wakeup             u:object_r:sysfs_wakeup:s0
@@ -48,12 +47,14 @@ genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/usb/po
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/usb/wakeup                                      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/wakeup                                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0036/power_supply/max77779fg/power/wakeup                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0036/wakeup/wakeup                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0036/power_supply/max77779fg/wakeup                               u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0069/power_supply/dc/power/wakeup                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0069/power_supply/dc/wakeup                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0069/power_supply/main-charger/power/wakeup                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0069/power_supply/main-charger/wakeup                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-0008/power/wakeup                                                 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0069/wakeup/wakeup                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-0008/wakeup                                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10ca0000.hsi2c/i2c-10/10-003b/power/wakeup                                               u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10ca0000.hsi2c/i2c-10/10-003b/power_supply/wireless/power/wakeup                         u:object_r:sysfs_wakeup:s0
