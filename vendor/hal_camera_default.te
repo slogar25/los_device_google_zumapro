@@ -1,2 +1,5 @@
 # Allow the Camera HAL to acquire wakelocks for buffer pre-allocation purposes
 wakelock_use(hal_camera_default)
+
+# Allows camera HAL to access the hw_jpeg /dev/video12.
+allow hal_camera_default hw_jpg_device:chr_file rw_file_perms;

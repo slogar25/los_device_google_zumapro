@@ -1,0 +1,2 @@
+# Allows GCA to access the hw_jpeg /dev/video12.
+allow google_camera_app hw_jpg_device:chr_file rw_file_perms;
