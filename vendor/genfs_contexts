@@ -43,6 +43,8 @@ genfscon sysfs /devices/platform/10870000.uart/tty/ttySAC0/power/wakeup         
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power/wakeup                                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/tcpm-source-psy-6-0025/power/wakeup             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/tcpm-source-psy-6-0025/wakeup                   u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/tcpm-source-psy-i2c-max77759tcpc/power/wakeup   u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/tcpm-source-psy-i2c-max77759tcpc/wakeup         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/usb/power/wakeup                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/power_supply/usb/wakeup                                      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/108d0000.hsi2c/i2c-6/6-0025/wakeup                                                       u:object_r:sysfs_wakeup:s0
@@ -70,6 +72,7 @@ genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.8.au
 genfscon sysfs /devices/platform/11210000.usb/11210000.dwc3/xhci-hcd-exynos.8.auto/wakeup                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/12100000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/power/wakeup                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/12100000.pcie/pci0000:00/0000:00:00.0/power/wakeup                                       u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/13120000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/wakeup                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/13120000.pcie/pci0001:00/0001:00:00.0/0001:01:00.0/power/wakeup                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/13120000.pcie/pci0001:00/0001:00:00.0/0001:01:00.0/wakeup                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/13120000.pcie/pci0001:00/0001:00:00.0/power/wakeup                                       u:object_r:sysfs_wakeup:s0
