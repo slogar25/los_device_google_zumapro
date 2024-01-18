@@ -1,5 +1,6 @@
 set_prop(radio, telephony_ril_prop)
 set_prop(radio, telephony_modemtype_prop)
+get_prop(radio, telephony_ntn_demo_mode_prop)
 
 allow radio radio_vendor_data_file:dir rw_dir_perms;
 allow radio radio_vendor_data_file:file create_file_perms;

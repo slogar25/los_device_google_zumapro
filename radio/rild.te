@@ -8,6 +8,7 @@ get_prop(rild, system_boot_reason_prop)
 
 set_prop(rild, telephony_ril_prop)
 set_prop(rild, telephony_modemtype_prop)
+get_prop(rild, telephony_ntn_demo_mode_prop)
 
 allow rild proc_net:file rw_file_perms;
 allow rild radio_vendor_data_file:dir create_dir_perms;
