@@ -1,0 +1,2 @@
+# b/321733124
+dontaudit system_suspend_server sysfs:dir { read };
