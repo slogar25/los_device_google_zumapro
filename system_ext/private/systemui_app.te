@@ -18,6 +18,7 @@ allow systemui_app adb_service:service_manager find;
 get_prop(systemui_app, keyguard_config_prop)
 set_prop(systemui_app, bootanim_system_prop)
 get_prop(systemui_app, qemu_hw_prop)
+set_prop(systemui_app, debug_prop)
 
 # Allow writing and removing wmshell protolog in /data/misc/wmtrace.
 userdebug_or_eng(`
