@@ -17,3 +17,6 @@ binder_call(grilservice_app, hal_wifi_ext)
 binder_call(grilservice_app, hal_audiometricext_default)
 binder_call(grilservice_app, rild)
 hal_client_domain(grilservice_app, hal_power_stats)
+# Read access to /sys/kernel/irq
+allow grilservice_app sysfs_irq:dir r_dir_perms;
+allow grilservice_app sysfs_irq:file r_file_perms;
