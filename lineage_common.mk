@@ -42,8 +42,13 @@ PRODUCT_PACKAGES += \
     TetheringOverlay
 
 # PixelDisplayService
+
 PRODUCT_COPY_FILES += \
     device/google/zumapro/conf/disable_pds.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/disable_pds.sh
+
+PRODUCT_PACKAGES += \
+    com.android.pixeldisplayservice.auto_generated_rro_product_adevtool__
+
 
 # Touch
 include hardware/google/pixel/touch/device.mk
