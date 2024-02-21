@@ -15,3 +15,4 @@ no_debugfs_restriction(`
 allow kernel vendor_regmap_debugfs:dir search;
 
 dontaudit kernel vendor_usb_debugfs:dir search;
+dontaudit kernel vendor_votable_debugfs:dir search;
