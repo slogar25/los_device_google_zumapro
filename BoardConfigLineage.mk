@@ -10,9 +10,12 @@ TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE := false
 
 # Manifests
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/lineage/config/device_framework_matrix.xml
+ifneq ($(wildcard vendor/google_devices/*/vintf/adevtool_manifest_vendor.xml),)
+else
 DEVICE_MANIFEST_FILE += \
     device/google/zumapro/android.hardware.security.rkp-service.citadel.xml \
     device/google/zumapro/manifest_radio_ds.xml
+endif
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += \
     device/google/zumapro/aam_compatibility_matrix.xml \
     device/google/zumapro/location/device_framework_matrix_product.xml
