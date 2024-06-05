@@ -6,3 +6,6 @@ allow vendor_init tee_data_file:lnk_file read;
 # MM
 allow vendor_init proc_compaction_proactiveness:file w_file_perms;
 allow vendor_init proc_percpu_pagelist_high_fraction:file w_file_perms;
+
+# setupwizard
+set_prop(vendor_init, setupwizard_feature_prop)
