@@ -55,6 +55,7 @@ using ::android::hardware::google::pixel::usb::ZoneInfo;
 using ::android::hardware::thermal::V2_0::TemperatureType;
 using ::android::hardware::thermal::V2_0::ThrottlingSeverity;
 using ::android::sp;
+using ::android::status_t;
 using ::ndk::ScopedAStatus;
 using ::std::shared_ptr;
 using ::std::string;
@@ -79,6 +80,7 @@ constexpr char kGadgetName[] = "11210000.dwc3";
 #define DISPLAYPORT_IRQ_HPD_COUNT_CHECK 3
 
 #define DISPLAYPORT_POLL_WAIT_MS 100
+#define ROLE_SWAP_RETRY_MS 700
 
 #define SVID_DISPLAYPORT "ff01"
 #define SVID_THUNDERBOLT "8087"
@@ -97,7 +99,7 @@ struct Usb : public BnUsb {
     ScopedAStatus enableUsbDataWhileDocked(const string& in_portName,
             int64_t in_transactionId) override;
     ScopedAStatus limitPowerTransfer(const string& in_portName, bool in_limit,
-        int64_t in_transactionId) override;
+            int64_t in_transactionId) override;
     ScopedAStatus resetUsbPort(const string& in_portName, int64_t in_transactionId) override;
 
     Status getDisplayPortUsbPathHelper(string *path);
@@ -108,6 +110,8 @@ struct Usb : public BnUsb {
     void setupDisplayPortPoll();
     void shutdownDisplayPortPollHelper();
     void shutdownDisplayPortPoll(bool force);
+    status_t handleShellCommand(int in, int out, int err, const char** argv,
+            uint32_t argc) override;
 
     std::shared_ptr<::aidl::android::hardware::usb::IUsbCallback> mCallback;
     // Protects mCallback variable
@@ -164,10 +168,15 @@ struct Usb : public BnUsb {
      */
     bool mPartnerSupportsDisplayPort;
 
+    // Usb hub vendor command settings for JK level tuning
+    int mUsbHubVendorCmdValue;
+    int mUsbHubVendorCmdIndex;
+
   private:
     pthread_t mPoll;
     pthread_t mDisplayPortPoll;
     pthread_t mDisplayPortShutdownHelper;
+    pthread_t mUsbHost;
 };
 
 } // namespace usb

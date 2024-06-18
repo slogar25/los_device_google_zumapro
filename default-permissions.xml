@@ -51,14 +51,21 @@
         <permission name="android.permission.BLUETOOTH_CONNECT" fixed="false"/>
     </exception>
 
+    <exception package="com.google.android.GoogleCamera">
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+    </exception>
+
     <exception package="com.google.android.apps.camera.services">
         <!-- Camera -->
         <permission name="android.permission.CAMERA" fixed="false"/>
         <!-- Camera Connectivity -->
-        <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="false"/>
         <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
         <permission name="android.permission.BLUETOOTH_CONNECT" fixed="false"/>
         <permission name="android.permission.BLUETOOTH_SCAN" fixed="false"/>
+    </exception>
+
+    <exception package="com.google.android.apps.pixel.creativeassistant">
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
     </exception>
 
     <exception package="com.google.android.apps.cbrsnetworkmonitor">
@@ -73,6 +80,10 @@
         <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="false"/>
         <!-- Used to call ActivityTransition API for Smart PNO -->
         <permission name="android.permission.ACTIVITY_RECOGNITION" fixed="false"/>
+        <!-- Used to display notifications for Spectrum Speedboost and Satellite eSOS -->
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+        <!-- Used by Bluetooth Module to collect bluetooth info -->
+        <permission name="android.permission.BLUETOOTH_CONNECT" fixed="false"/>
     </exception>
 
     <exception
@@ -116,6 +127,8 @@
     <exception package="com.google.android.wfcactivation">
         <!-- SMS -->
         <permission name="android.permission.RECEIVE_WAP_PUSH" fixed="false"/>
+        <!-- Notifications -->
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
     </exception>
 
     <exception package="com.google.android.apps.accessibility.voiceaccess">
@@ -142,6 +155,11 @@
         package="com.google.android.apps.turbo">
         <!-- Notifications -->
         <permission name="android.permission.POST_NOTIFICATIONS" fixed="false"/>
+    </exception>
+    <exception
+        package="com.google.android.apps.work.oobconfig">
+        <!-- Notifications -->
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="true"/>
     </exception>
     <exception
         package="com.google.android.euicc">
