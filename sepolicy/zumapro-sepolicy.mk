@@ -34,4 +34,5 @@ BOARD_SEPOLICY_DIRS += device/google/zumapro/sepolicy/legacy/zuma/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += device/google/zumapro/sepolicy/legacy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/google/zumapro/sepolicy/legacy/system_ext/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/zumapro/sepolicy/legacy/system_ext/private
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/gs-common/pixelsystemservice/sepolicy
 
