@@ -1040,6 +1040,8 @@ SUPPORT_NR_DS := true
 USE_RADIO_HAL_2_1 := true
 # Using Early Send Device Info
 USE_EARLY_SEND_DEVICE_INFO := true
+# Using New Radio Access Format to modem
+USE_NEW_RADIO_ACCESS_SPECIFIER_FORMAT := true
 
 #$(call inherit-product, vendor/google_devices/telephony/common/device-vendor.mk)
 #$(call inherit-product, vendor/google_devices/zumapro/proprietary/device-vendor.mk)
