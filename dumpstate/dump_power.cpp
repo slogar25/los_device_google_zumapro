@@ -270,6 +270,7 @@ void dumpLogBufferTcpm() {
 void dumpTcpc() {
     const char* max77759TcpcHead = "TCPC Device Attributes";
     const char* directory = "/sys/class/typec/port0/device";
+    // alphabetic order
     const char* max77759Tcpc [] {
             "auto_discharge",
             "bc12_enabled",
@@ -278,6 +279,7 @@ void dumpTcpc() {
             "contaminant_detection_status",
             "frs",
             "irq_hpd_count",
+            "manual_disable_vbus",
             "non_compliant_reasons",
             "sbu_pullup",
             "update_sdp_enum_timeout",
