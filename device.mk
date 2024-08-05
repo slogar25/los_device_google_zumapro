@@ -1002,7 +1002,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	ro.postinstall.fstab.prefix=/product
 
 PRODUCT_COPY_FILES += \
-	device/google/zumapro/conf/fstab.postinstall:$(TARGET_COPY_OUT_PRODUCT)/etc/fstab.postinstall
+	device/google/zumapro/conf/fstab.ro.postinstall:$(TARGET_COPY_OUT_PRODUCT)/etc/fstab.postinstall
 
 # fastbootd
 PRODUCT_PACKAGES += \
