@@ -474,7 +474,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
 	device/google/$(TARGET_BOARD_PLATFORM)/conf/fstab.persist:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.persist \
-	device/google/$(TARGET_BOARD_PLATFORM)/conf/fstab.modem:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.modem \
+	device/google/$(TARGET_BOARD_PLATFORM)/conf/fstab.ro.modem:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.modem \
 	device/google/$(TARGET_BOARD_PLATFORM)/conf/fstab.rw.efs:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.efs
 
 # Shell scripts
