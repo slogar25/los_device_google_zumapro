@@ -1,13 +1,10 @@
 on init
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/lcpi_threshold
     chown system system /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/spc_threshold
     chown system system /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/limit_frequency
     chown system system /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/pmu_limit_enable
-    chown system system /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/lcpi_threshold
     chown system system /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold
     chown system system /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/limit_frequency
     chown system system /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/pmu_limit_enable
-    chown system system /sys/devices/system/cpu/cpufreq/policy7/sched_pixel/lcpi_threshold
     chown system system /sys/devices/system/cpu/cpufreq/policy7/sched_pixel/spc_threshold
     chown system system /sys/devices/system/cpu/cpufreq/policy7/sched_pixel/limit_frequency
     chown system system /sys/devices/system/cpu/cpufreq/policy7/sched_pixel/pmu_limit_enable
@@ -31,17 +28,30 @@ on init
     write /proc/vendor_sched/groups/sys/uclamp_min 190
     write /proc/vendor_sched/groups/sys/prefer_idle 1
 
+    write /proc/vendor_sched/groups/bg/rampup_multiplier 0
+    write /proc/vendor_sched/groups/cam/rampup_multiplier 1
+    write /proc/vendor_sched/groups/cam_power/rampup_multiplier 1
+    write /proc/vendor_sched/groups/dex2oat/rampup_multiplier 0
+    write /proc/vendor_sched/groups/fg/rampup_multiplier 0
+    write /proc/vendor_sched/groups/nnapi/rampup_multiplier 0
+    write /proc/vendor_sched/groups/ota/rampup_multiplier 0
+    write /proc/vendor_sched/groups/rt/rampup_multiplier 0
+    write /proc/vendor_sched/groups/sf/rampup_multiplier 1
+    write /proc/vendor_sched/groups/sys/rampup_multiplier 0
+    write /proc/vendor_sched/groups/sys_bg/rampup_multiplier 0
+    write /proc/vendor_sched/groups/ta/rampup_multiplier 1
+    write /proc/vendor_sched/adpf_rampup_multiplier 2
+
     # governor setting
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor sched_pixel
     write /sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/down_rate_limit_us 5000
-    write /sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/down_rate_limit_scale_pow 2
+    write /sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/down_rate_limit_us 500
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor sched_pixel
     write /sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/down_rate_limit_us 500
     write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor sched_pixel
     write /sys/devices/system/cpu/cpu7/cpufreq/sched_pixel/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpu7/cpufreq/sched_pixel/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpu7/cpufreq/sched_pixel/down_rate_limit_us 500
 
     # memlat cpuidle awareness setting
     # FIXME(b/301212469) these nodes missing on zuma pro
@@ -152,6 +162,7 @@ on property:init.svc.vendor.charger=running
 on property:sys.boot_completed=1
     # Set kswapd affinity
     write /sys/kernel/vendor_mm/kswapd_cpu_affinity 7f
+    write /sys/kernel/vendor_mm/pa_kill/cpu_affinity 7f
 
     # Restore prefer idle
     write /proc/vendor_sched/groups/ta/preferred_idle_mask_low 0xff
@@ -174,14 +185,11 @@ on property:sys.boot_completed=1
     setprop vendor.powerhal.init 1
 
     # Set PMU freq limit parameters
-    write /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/lcpi_threshold 0
     write /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/spc_threshold 76
     write /sys/devices/system/cpu/cpufreq/policy0/sched_pixel/limit_frequency 1328000
-    write /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/lcpi_threshold 0
-    write /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold 73
-    write /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/limit_frequency 1836000
-    write /sys/devices/system/cpu/cpufreq/policy7/sched_pixel/lcpi_threshold 0
-    write /sys/devices/system/cpu/cpufreq/policy7/sched_pixel/spc_threshold 68
+    write /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold 59
+    write /sys/devices/system/cpu/cpufreq/policy4/sched_pixel/limit_frequency 1795000
+    write /sys/devices/system/cpu/cpufreq/policy7/sched_pixel/spc_threshold 62
     write /sys/devices/system/cpu/cpufreq/policy7/sched_pixel/limit_frequency 2363000
     write /proc/vendor_sched/pmu_poll_time 10
 

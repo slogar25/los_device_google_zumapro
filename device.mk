@@ -16,7 +16,7 @@
 
 include device/google/gs-common/device.mk
 include device/google/gs-common/gs_watchdogd/watchdog.mk
-include device/google/gs-common/ramdump/ramdump.mk
+include device/google/gs-common/ramdump_and_coredump/ramdump_and_coredump.mk
 include device/google/gs-common/soc/soc.mk
 include device/google/gs-common/modem/modem.mk
 include device/google/gs-common/aoc/aoc.mk
@@ -26,6 +26,7 @@ include device/google/gs-common/storage/storage.mk
 include device/google/gs-common/thermal/dump/thermal.mk
 include device/google/gs-common/thermal/thermal_hal/device.mk
 include device/google/gs-common/performance/perf.mk
+include device/google/gs-common/power/power.mk
 include device/google/gs-common/pixel_metrics/pixel_metrics.mk
 include device/google/gs-common/soc/freq.mk
 include device/google/gs-common/gps/dump/log.mk
@@ -41,6 +42,9 @@ include device/google/gs-common/sota_app/factoryota.mk
 include device/google/gs-common/misc_writer/misc_writer.mk
 include device/google/gs-common/gyotaku_app/gyotaku.mk
 include device/google/gs-common/bootctrl/bootctrl_aidl.mk
+include device/google/gs-common/betterbug/betterbug.mk
+include device/google/gs-common/recorder/recorder.mk
+include device/google/gs-common/fingerprint/fingerprint.mk
 
 include device/google/zumapro/dumpstate/item.mk
 
@@ -65,8 +69,6 @@ ifeq ($(USE_PIXEL_GRALLOC),true)
 	PRODUCT_SOONG_NAMESPACES += hardware/google/gchips/GrallocHAL
 endif
 
-# TODO(b/272725898): Needs to check with owner later
-$(warning hardware/google/graphics/zuma set to zuma on zumapro target)
 PRODUCT_SOONG_NAMESPACES += \
 	hardware/google/av \
 	hardware/google/gchips \
@@ -179,7 +181,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.asha.central.enabled=true \
 	bluetooth.profile.a2dp.source.enabled=true \
 	bluetooth.profile.avrcp.target.enabled=true \
-	bluetooth.profile.bap.broadcast.assist.enabled=true \
 	bluetooth.profile.bap.unicast.server.enabled=true \
 	bluetooth.profile.bas.client.enabled=true \
 	bluetooth.profile.csip.set_coordinator.enabled=true \
@@ -213,7 +214,79 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.usb.displayport.enabled=1
 endif
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.hdcp_checking=always
+
 USE_LASSEN_OEMHOOK := true
+ifneq ($(BOARD_WITHOUT_RADIO),true)
+# The "power-anomaly-sitril" is added into PRODUCT_SOONG_NAMESPACES when
+# $(USE_LASSEN_OEMHOOK) is true and $(BOARD_WITHOUT_RADIO) is not true.
+PRODUCT_SOONG_NAMESPACES += vendor/google/tools/power-anomaly-sitril
+
+$(call inherit-product-if-exists, vendor/samsung_slsi/telephony/$(BOARD_USES_SHARED_VENDOR_TELEPHONY)/common/device-vendor.mk)
+
+# modem_ml_svc_sit daemon
+PRODUCT_PACKAGES += modem_ml_svc_sit
+
+# TODO: b/350624523 - Add back modem ML TFLite service after it is ready.
+# ifeq (,$(filter aosp_%,$(TARGET_PRODUCT)))
+# # Modem ML TFLite service.
+# PRODUCT_PACKAGES += modemml-tflite-service \
+# 	libtensorflowlite_jni
+
+# # Allow TFLite service modules to be installed to the system partition
+# PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+# 	system/lib64/libtensorflowlite_jni.so
+
+# PRODUCT_SYSTEM_SERVER_JARS += system_ext:modemml-tflite-service
+# endif
+
+# modem ML models configs
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_COPY_FILES += \
+	device/google/zumapro/modem_ml/modem_ml_nnapi_models_userdebug.conf:$(TARGET_COPY_OUT_VENDOR)/etc/modem_ml_models.conf \
+	device/google/zumapro/modem_ml/modem_ml_tflite_models_userdebug.conf:$(TARGET_COPY_OUT_VENDOR)/etc/modem_ml_tflite_models.conf
+else
+PRODUCT_COPY_FILES += \
+	device/google/zumapro/modem_ml/modem_ml_nnapi_models_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/modem_ml_models.conf \
+	device/google/zumapro/modem_ml/modem_ml_tflite_models_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/modem_ml_tflite_models.conf
+endif
+
+# modem logging binary/configs
+PRODUCT_PACKAGES += modem_logging_control
+
+# libeomservice_proxy binary/configs
+PRODUCT_PACKAGES += liboemservice_proxy_default
+
+# modem logging configs
+PRODUCT_PACKAGES += \
+	logging.conf \
+	default.cfg \
+	default.nprf \
+	default_metrics.xml \
+	Pixel_stability.cfg \
+	Pixel_stability.nprf \
+	extensive_logging.conf
+
+# Vendor modem extensive logging default property
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.modem.extensive_logging_enabled=false
+
+# Pixel Logger
+include hardware/google/pixel/PixelLogger/PixelLogger.mk
+
+# Use Lassen specifc Shared Modem Platform
+SHARED_MODEM_PLATFORM_VENDOR := lassen
+
+else # ifneq ($(BOARD_WITHOUT_RADIO),true)
+
+# Pixel Logger
+BOARD_SEPOLICY_DIRS += hardware/google/pixel-sepolicy/logger_app
+
+endif # ifneq ($(BOARD_WITHOUT_RADIO),true)
+
+# Shared Modem Platform
+include device/google/gs-common/modem/shared_modem_platform/shared_modem_platform.mk
 
 # Use for GRIL
 USES_LASSEN_MODEM := true
@@ -222,6 +295,12 @@ USE_WHI_GRIL_RECOVERY := true
 ifeq ($(USES_GOOGLE_DIALER_CARRIER_SETTINGS),true)
 USE_GOOGLE_DIALER := true
 USE_GOOGLE_CARRIER_SETTINGS := true
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.vendor.uses_google_dialer_carrier_settings=1
+endif
+
+ifeq ($(USES_GOOGLE_PREBUILT_MODEM_SVC),true)
+USE_GOOGLE_PREBUILT_MODEM_SVC := true
 endif
 
 # Audio client implementation for RIL
@@ -292,9 +371,8 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.vulkan.version-1_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.xml \
 	frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level.xml \
 	frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute.xml \
-	frameworks/native/data/etc/android.software.contextualsearch.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.contextualsearch.xml \
-	frameworks/native/data/etc/android.software.vulkan.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
-	frameworks/native/data/etc/android.software.opengles.deqp.level-2023-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
+	frameworks/native/data/etc/android.software.vulkan.deqp.level-2024-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
+	frameworks/native/data/etc/android.software.opengles.deqp.level-2024-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
 
 #endif
 
@@ -448,7 +526,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.sys.silentlog.tcp = "On" \
 	ro.vendor.cbd.modem_removable = "1" \
 	ro.vendor.cbd.modem_type = "s5100sit" \
-	persist.vendor.sys.modem.logging.br_num=5 \
+	persist.vendor.sys.modem.logging.br_num=10 \
 	persist.vendor.sys.modem.logging.enable=true
 
 # Enable silent CP crash handling
@@ -567,10 +645,6 @@ PRODUCT_PROPERTY_OVERRIDES += aaudio.hw_burst_min_usec=2000
 # Libs
 PRODUCT_PACKAGES += \
 	com.android.future.usb.accessory
-
-PRODUCT_PACKAGES += \
-	android.hardware.graphics.mapper@4.0-impl \
-	android.hardware.graphics.allocator-V1-service
 
 PRODUCT_PACKAGES += \
 	android.hardware.memtrack-service.pixel \
@@ -803,6 +877,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	debug.stagefright.c2inputsurface=-1 \
 
+PRODUCT_PROPERTY_OVERRIDES += media.c2.hal.selection=aidl
+
 # 2. OpenMAX IL
 PRODUCT_COPY_FILES += \
 	device/google/zumapro/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -851,8 +927,6 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
 	trusty_metricsd
 
-# TODO(b/272725898): Needs to check with owner later
-$(warning displaycolor_platform set to zuma on zumapro target)
 $(call soong_config_set,google_displaycolor,displaycolor_platform,zuma)
 PRODUCT_PACKAGES += \
 	android.hardware.composer.hwc3-service.pixel \
@@ -945,10 +1019,6 @@ USE_EARLY_SEND_DEVICE_INFO := true
 #$(call inherit-product, vendor/google_devices/telephony/common/device-vendor.mk)
 #$(call inherit-product, vendor/google_devices/zumapro/proprietary/device-vendor.mk)
 
-ifneq ($(BOARD_WITHOUT_RADIO),true)
-$(call inherit-product-if-exists, vendor/samsung_slsi/telephony/$(BOARD_USES_SHARED_VENDOR_TELEPHONY)/common/device-vendor.mk)
-endif
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 #$(call inherit-product, hardware/google_devices/exynos5/exynos5.mk)
 #$(call inherit-product-if-exists, hardware/google_devices/zumapro/zumapro.mk)
@@ -962,42 +1032,6 @@ PRODUCT_COPY_FILES += \
 	device/google/zumapro/default-permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions.xml \
 	device/google/zumapro/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
 	frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
-
-ifneq ($(BOARD_WITHOUT_RADIO),true)
-# modem_svc_sit daemon
-PRODUCT_PACKAGES += modem_svc_sit
-
-# modem_ml_svc_sit daemon
-PRODUCT_PACKAGES += modem_ml_svc_sit
-
-# modem ML models configs
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_COPY_FILES += \
-	device/google/zumapro/modem_ml/modem_ml_models_userdebug.conf:$(TARGET_COPY_OUT_VENDOR)/etc/modem_ml_models.conf
-else
-PRODUCT_COPY_FILES += \
-	device/google/zumapro/modem_ml/modem_ml_models_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/modem_ml_models.conf
-endif
-
-# modem logging binary/configs
-PRODUCT_PACKAGES += modem_logging_control
-
-# libeomservice_proxy binary/configs
-PRODUCT_PACKAGES += liboemservice_proxy_default
-
-# modem logging configs
-PRODUCT_COPY_FILES += \
-	device/google/zumapro/radio/config/logging.conf:$(TARGET_COPY_OUT_VENDOR)/etc/modem/logging.conf \
-	device/google/zumapro/radio/config/default.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/modem/default.cfg \
-	device/google/zumapro/radio/config/default.nprf:$(TARGET_COPY_OUT_VENDOR)/etc/modem/default.nprf \
-	device/google/zumapro/radio/config/default_metrics.xml:$(TARGET_COPY_OUT_VENDOR)/etc/modem/default_metrics.xml
-# modem extensive logging config
-PRODUCT_PACKAGES += \
-	extensive_logging.conf
-# Vendor modem extensive logging default property
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.vendor.modem.extensive_logging_enabled=false
-endif
 
 # Vibrator Diag
 PRODUCT_PACKAGES_DEBUG += \
@@ -1028,10 +1062,20 @@ $(call soong_config_set,aoc,target_product,$(TARGET_PRODUCT))
 #
 ## Audio properties
 PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.audio.cca.unsupported=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.vc_call_vol_steps=7 \
-	ro.config.media_vol_steps=25 \
 	ro.audio.monitorRotation = true \
 	ro.audio.offload_wakelock=false
+
+ifneq (,$(OVERRIDE_MEDIA_VOLUME_STEPS))
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.config.media_vol_steps=$(OVERRIDE_MEDIA_VOLUME_STEPS)
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.config.media_vol_steps=25
+endif
 
 # vndservicemanager and vndservice no longer included in API 30+, however needed by vendor code.
 # See b/148807371 for reference
@@ -1081,7 +1125,9 @@ PRODUCT_SOONG_NAMESPACES += \
 	vendor/google_devices/zumapro/proprietary/gchips/tpu/darwinn_logging_service \
 	vendor/google_devices/zumapro/proprietary/gchips/tpu/nnapi_stable_aidl \
 	vendor/google_devices/zumapro/proprietary/gchips/tpu/aidl \
-	vendor/google_devices/zumapro/proprietary/gchips/tpu/hal
+	vendor/google_devices/zumapro/proprietary/gchips/tpu/hal \
+	vendor/google_devices/zumapro/proprietary/gchips/tpu/tachyon/api \
+	vendor/google_devices/zumapro/proprietary/gchips/tpu/tachyon/service
 # TPU firmware
 PRODUCT_PACKAGES += edgetpu-rio.fw
 
@@ -1123,16 +1169,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Project
 include hardware/google/pixel/common/pixel-common-device.mk
-
-# Pixel Logger
-ifneq ($(BOARD_WITHOUT_RADIO),true)
-include hardware/google/pixel/PixelLogger/PixelLogger.mk
-else
-BOARD_SEPOLICY_DIRS += hardware/google/pixel-sepolicy/logger_app
-endif
-
-# sscoredump
-include hardware/google/pixel/sscoredump/device.mk
 
 # RadioExt Version
 USES_RADIOEXT_V1_7 = true
@@ -1180,8 +1216,8 @@ PRODUCT_COPY_FILES += \
         device/google/zumapro/telephony/sats2.dat:$(TARGET_COPY_OUT_VENDOR)/etc/telephony/sats2.dat
 
 # Touch service
-include hardware/google/pixel/input/twoshay.mk
 include device/google/gs-common/touch/twoshay/aidl_zuma.mk
+include device/google/gs-common/touch/twoshay/twoshay.mk
 
 PRODUCT_CHECK_VENDOR_SEAPP_VIOLATIONS := true
 
@@ -1191,3 +1227,9 @@ PRODUCT_CHECK_DEV_TYPE_VIOLATIONS := true
 # TODO(b/322518837): Remove the property override once the flag is launched.
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.bugle.enable_emergency_satellite_messaging=true
+
+# Allow longer timeout for incident report generation in bugreport
+# Overriding in /product partition instead of /vendor intentionally,
+# since it can't be overridden from /vendor.
+PRODUCT_PRODUCT_PROPERTIES += \
+	dumpstate.strict_run=false

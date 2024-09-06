@@ -31,7 +31,7 @@ void addGPU(std::shared_ptr<PowerStats> p);
 void addMobileRadio(std::shared_ptr<PowerStats> p);
 void addNFC(std::shared_ptr<PowerStats> p);
 void addPCIe(std::shared_ptr<PowerStats> p);
-void addPixelStateResidencyDataProvider(std::shared_ptr<PowerStats> p);
+void addPixelStateResidencyDataProvider(std::shared_ptr<PowerStats> p, std::string displayName);
 void addPowerDomains(std::shared_ptr<PowerStats> p);
 void addSoC(std::shared_ptr<PowerStats> p);
 void addTPU(std::shared_ptr<PowerStats> p);
