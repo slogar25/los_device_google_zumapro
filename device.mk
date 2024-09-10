@@ -518,8 +518,6 @@ PRODUCT_COPY_FILES += \
 
 ## Enable the CHRE Daemon
 CHRE_USF_DAEMON_ENABLED := false
-PRODUCT_PACKAGES += \
-	preloaded_nanoapps.json
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
