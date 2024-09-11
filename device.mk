@@ -457,7 +457,10 @@ PRODUCT_COPY_FILES += \
 	device/google/zumapro/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.zuma.rc
 
 # Fstab files
-ifeq (ext4,$(TARGET_RW_FILE_SYSTEM_TYPE))
+ifeq (true,$(TARGET_BOOTS_16K))
+PRODUCT_SOONG_NAMESPACES += \
+        device/google/zumapro/conf/fs-16kb
+else ifeq (ext4,$(TARGET_RW_FILE_SYSTEM_TYPE))
 PRODUCT_SOONG_NAMESPACES += \
         device/google/zumapro/conf/ext4
 else
