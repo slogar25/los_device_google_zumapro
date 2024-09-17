@@ -130,6 +130,16 @@ on init
     write /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu6_memlat@17000010/mem_latency/stall_floor 2400
     write /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu7_memlat@17000010/mem_latency/stall_floor 500
 
+    # Prefer Asymmetric MTE mode when enabled
+    write /sys/devices/system/cpu/cpu0/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu1/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu2/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu3/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu4/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu5/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu6/mte_tcf_preferred asymm
+    write /sys/devices/system/cpu/cpu7/mte_tcf_preferred asymm
+
 on zygote-start
     # For PixelLogger configuration file.
     chmod 0771 /data/vendor/wifi
