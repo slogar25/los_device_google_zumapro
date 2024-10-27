@@ -1,0 +1,4 @@
+type lwis_device, dev_type;
+type tee_persist_block_device, dev_type;
+type tee_userdata_block_device, dev_type;
+type hw_jpg_device, dev_type, mlstrustedobject;

@@ -1,0 +1,4 @@
+userdebug_or_eng(`
+        # Allows GCA_Eng & GCA-Next to access the hw_jpeg /dev/video12.
+        allow debug_camera_app hw_jpg_device:chr_file rw_file_perms;
+')
