@@ -1,2 +1,5 @@
 # Fingerprint
 type hal_fingerprint_ext_hwservice, hwservice_manager_type;
+
+# Face
+type hal_face_debug_hwservice, hwservice_manager_type;

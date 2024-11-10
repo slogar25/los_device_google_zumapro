@@ -1,0 +1,7 @@
+binder_call(hwservicemanager, hal_face_default)
+
+allow hwservicemanager hal_face_default:binder { call transfer };
+allow hwservicemanager hal_face_default:dir { search };
+allow hwservicemanager hal_face_default:file { read map open };
+allow hwservicemanager hal_face_default:process { getattr };
+

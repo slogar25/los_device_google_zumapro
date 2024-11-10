@@ -3,3 +3,7 @@ user=_app seinfo=platform name=com.android.pixeldisplayservice domain=pixeldispl
 
 # PixelNtnService
 user=system seinfo=platform name=com.google.android.satellite domain=pixelntnservice_app type=app_data_file levelFrom=all
+
+# DC Service
+user=_app isPrivApp=true name=com.google.android.apps.pixel.dcservice domain=dcservice_app type=privapp_data_file levelFrom=user
+user=_app isPrivApp=true name=com.google.android.apps.pixel.dcservice.ui domain=dcservice_app type=privapp_data_file levelFrom=user

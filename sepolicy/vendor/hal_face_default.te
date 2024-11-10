@@ -1,0 +1,81 @@
+# Graphics allocator and mapper permissions
+allow hal_face_default hal_graphics_mapper_hwservice:hwservice_manager find;
+hal_client_domain(hal_face_default, hal_graphics_allocator)
+binder_call(hal_face_default, hal_graphics_allocator_default)
+allow hal_face_default hal_graphics_allocator_default:binder { call transfer };
+allow hal_face_default hal_graphics_allocator_default:fd use;
+
+# Face debug HAL permissions
+hal_server_domain(hal_face_default, hal_face_debug)
+allow hal_face_default hal_face_debug_service:service_manager { add find };
+
+# DMA buffer access
+allow hal_face_default dmabuf_system_heap_device:chr_file { ioctl read open };
+allow hal_face_default faceauth_heap_device:chr_file { ioctl read open };
+
+# TPU device access
+allow hal_face_default edgetpu_device:chr_file { ioctl read write open };
+
+# Sensor HAL access
+allow hal_face_default fwk_sensor_hwservice:hwservice_manager find;
+
+# Power HAL access
+hal_client_domain(hal_face_default, hal_power);
+
+# Wakelock and suspend permissions
+wakelock_use(hal_face_default)
+allow hal_face_default self:cap2_userns { block_suspend };
+allow hal_face_default self:capability2 { block_suspend };
+
+# TEE access for face HAL
+allow hal_face_default tee_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+
+# Token manager and cameraserver access
+allow hal_face_default hidl_token_hwservice:hwservice_manager find;
+allow hal_face_default fwk_camera_hwservice:hwservice_manager find;
+binder_call(hal_face_default, camera_service_server)
+binder_call(camera_service_server, hal_face_default)
+allow hal_face_default camera_service_server:binder { call transfer };
+allow hal_face_default camera_service_server:fd use;
+
+# Vendor file directory and persist files
+allow hal_face_default face_vendor_data_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+r_dir_file(hal_face_default, persist_camera_file)
+allow hal_face_default persist_file:dir search;
+allow hal_face_default mnt_vendor_file:dir search;
+allow hal_face_default system_app:fd use;
+
+# Debug permissions for incidentd
+userdebug_or_eng(`
+  allow hal_face_default incidentd:fd use;
+  allow hal_face_default incidentd:fifo_file write;
+')
+
+# Property and hwbinder permissions
+get_prop(hal_face_default, camera_config_prop)
+hwbinder_use(hal_face_default);
+
+# Stats and thermal HAL access
+allow hal_face_default fwk_stats_hwservice:hwservice_manager find;
+binder_call(hal_face_default, stats_service_server)
+allow hal_face_default fwk_stats_service:service_manager find;
+binder_use(hal_face_default)
+hal_client_domain(hal_face_default, hal_thermal)
+
+# Miscellaneous permissions
+allow hal_face_default hidl_manager_hwservice:hwservice_manager find;
+allow hal_face_default hwservicemanager:binder { call transfer };
+allow hal_face_default hwservicemanager_prop:file { read getattr map open };
+allow hal_face_default sysfs:file { ioctl read write getattr lock append map open watch watch_reads };
+allow hal_face_default sysfs_faceauth_rawimage_heap:file { ioctl read write getattr lock append map open watch watch_reads };
+allow hal_face_default traced_producer_socket:sock_file write;
+allow hal_face_default traced_tmpfs:file { read write getattr map };
+allow hal_face_default camera_config_prop:file { read getattr map open };
+allow hal_face_default vndbinder_device:chr_file ioctl;
+allow hal_face_default gxp_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hal_face_default traced:fd use;
+allow hal_face_default traced:unix_stream_socket connectto;
+allow hal_face_default system_suspend_hwservice:hwservice_manager find;
+allow hal_face_default system_suspend_server:binder { call transfer };
+allow hal_face_default system_suspend_server:fd use;
+allow hal_face_default fwk_camera_service:service_manager find;
