@@ -29,6 +29,10 @@
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.goodix   u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/disable_contaminant_detection\.sh                            u:object_r:disable-contaminant-detection-sh_exec:s0
 
+# Stock binaries
+/vendor/bin/hw/android\.hardware\.biometrics\.face-service(.[a-zA-Z0-9]+)?.pixel  u:object_r:hal_face_default_exec:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.face-service-[a-zA-Z0-9]+     u:object_r:hal_face_default_exec:s0
+
 # Vendor libraries
 /vendor/lib64/libdrm\.so                                                 u:object_r:same_process_hal_file:s0
 /vendor/lib64/libion_google\.so                                          u:object_r:same_process_hal_file:s0
