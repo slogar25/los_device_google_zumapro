@@ -18,7 +18,7 @@ DEVICE_MANIFEST_FILE += \
 endif
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += \
     device/google/zumapro/location/device_framework_matrix_product.xml
-endif
+
 
 # Partitions
 AB_OTA_PARTITIONS += \
