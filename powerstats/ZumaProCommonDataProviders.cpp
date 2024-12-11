@@ -196,7 +196,7 @@ void addDvfsStats(std::shared_ptr<PowerStats> p) {
             path, NS_TO_MS, cfgs));
 
     // TPU DVFS
-    const int TICK_TO_MS = 100;
+    const int TICK_TO_MS = 1000;
     std::vector<std::string> freqs = {
             "1119000",
             "1066000",
@@ -282,7 +282,7 @@ void addSoC(std::shared_ptr<PowerStats> p) {
 }
 
 void setEnergyMeter(std::shared_ptr<PowerStats> p) {
-    std::vector<const std::string> deviceNames { "s2mpg14-odpm", "s2mpg15-odpm" };
+    std::vector<std::string> deviceNames { "s2mpg14-odpm", "s2mpg15-odpm" };
     p->setEnergyMeterDataProvider(std::make_unique<IioEnergyMeterDataProvider>(deviceNames, true));
 }
 
