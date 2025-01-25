@@ -49,6 +49,7 @@ include device/google/gs-common/16kb/16kb.mk
 
 include device/google/zumapro/dumpstate/item.mk
 
+
 TARGET_BOARD_PLATFORM := zumapro
 ALLOW_MISSING_DEPENDENCIES := true
 

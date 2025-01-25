@@ -15,6 +15,7 @@
 #
 BUILD_BROKEN_DUP_RULES := true
 
+
 include build/make/target/board/BoardConfigMainlineCommon.mk
 include build/make/target/board/BoardConfigPixelCommon.mk
 
